@@ -26,30 +26,55 @@ do {
 
 console.log(numeros); 
 
+function mostrarArray(elementos, textoCustom = ""){
 
-document.write('<h2>Este es mi idea de Array</h2>');
-document.write('<ul>');
-for(let numero of numeros){
-  
-  document.write('<li>'+numero+'</li>');
+  document.write('<h2>Este es mi idea de Array'+textoCustom+'</h2>');
+  document.write('<ul>');
+  for(let elemento of elementos){
+    
+    document.write('<li>'+elemento+'</li>');
+  }
+  document.write('</ul>');
 }
-document.write('</ul>');
+/* arreglo mostrado por pantalla */
+mostrarArray(numeros);
 
-
-document.write('<h2>Ordenar el array:</h2>');
+/* document.write('<h2>Ordenar el array:</h2>');
 document.write(numeros.sort());
-console.log(numeros.sort());
+console.log(numeros.sort()); */
+
+numeros.sort(function(a, b) { return a-b});
+mostrarArray(numeros, 'Ordenados');
 
 
-document.write('<h2>Invertir el array:</h2>');
+/* document.write('<h2>Invertir el array:</h2>');
 document.write(numeros.reverse());
-console.log(numeros.reverse());
+console.log(numeros.reverse()); */
 
-document.write('<h2>conteo del array:</h2>');
-document.write(numeros.length());
-console.log(numeros.length());
-
+numeros.reverse();
+mostrarArray(numeros, 'Al reves');
 
 
+
+document.write('<h2>Conteo del array: '+numeros.length+'</h2>');
+/* console.log(numeros); */
+
+
+
+/**
+ * buscar un elemento
+ */
+
+var buscar = parseInt(prompt('Ingresa el numero a buscar: ',0));
+
+var buscas = numeros.find(num => num == buscar);
+
+if(buscas == true){
+
+  document.write('<h2>El Numero que buscas es: '+buscas+'</h2>');
+}else{
+  document.write('<h2>No se encontro ese Numero en el array: '+buscar+'</h2>');
+
+}
 
 
