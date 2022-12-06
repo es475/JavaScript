@@ -34,3 +34,36 @@ lenguajes.forEach((elemento, index) =>{
     document.write('<li>'+index+' - '+elemento+'</li>');
 });
 document.write('</ul>');
+
+document.write("<h2>Lenguajes de programacion del 2020</h2>");
+document.write('<ul>');
+
+for(let lengua in lenguajes){
+    document.write('<li>'+lenguajes[lengua]+'</li>');
+    
+}
+
+document.write('</ul>');
+
+document.write("<h2>Lenguajes de programacion del 2021</h2>");
+document.write('<ul>');
+
+for(let lengua of lenguajes){
+    document.write('<li>'+lengua+'</li>');
+    
+    
+
+
+}
+/* numbers.push(parseInt(prompt('Ingresa un numero!', 0))) */
+document.write('</ul>');
+
+//Busquedas
+//lenguajes.find 
+var precios = [10,20,50,80,12];
+var busque = lenguajes.findIndex( lengua => lengua == 'c#');
+var busques = precios.some( precio => precio >= 50);
+
+console.log(busque);
+console.log(busques);
+
