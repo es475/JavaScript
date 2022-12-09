@@ -3,6 +3,7 @@
 console.log('listo');
 //fetch y peticiones a rest
 var dato = document.querySelector('#users');
+var profesor = document.querySelector('#profe');
 var bauch1 = document.querySelector('#bauch');
 
 /* var usuarios = []; */
@@ -14,20 +15,56 @@ var bauch1 = document.querySelector('#bauch');
 getUsuarios()
   .then(data => data.json())
   .then(data => {
-     listaUsuarios(data);
+    listaUsuarios(data);
+    return getInfo();
 
-     return getBauch();
+    
+  })
+  .then(data => {
+    profesor.innerHTML = data;
+    console.log(data);
+    return getBauch();
   })
   .then(data => data.json())
   .then(bauch => {
     nostrarBauch(bauch);
+ 
   })
+  .catch(error =>{
+    alert('Error en las Peticiones: '+ error);
+   console.log(error+' fff');
+  });
 
   function getUsuarios(){
     return fetch('https://jsonplaceholder.typicode.com/users');
   }
   function getBauch(){
     return fetch('https://jsonplaceholder.typicode.com/users/2');
+  }
+
+  function getInfo(){
+   
+    var profesor = {
+      nombre: 'Esteban',
+      apellido: 'Garcia',
+      url: 'https://google.com'
+    };
+    return new Promise((resolve, reject) => {
+      var profesorS = '';
+      setTimeout(function(){
+       profesorS = JSON.stringify(profesor);
+
+       if(typeof profesorS != 'string' || profesorS == '') return reject('error 1');
+       
+         return resolve(profesorS);
+
+    },3000)
+      
+
+
+    })
+
+
   }
 
   function listaUsuarios(usuarios){
@@ -46,7 +83,7 @@ getUsuarios()
   }
 
   function nostrarBauch(bauch){
-    console.log(bauch);
+     console.log(bauch); 
       let nombre = document.createElement('h4');
       let email = document.createElement('p');
       /* let avatar =document.createElement('img'); */
