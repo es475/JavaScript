@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JQuery</title>
+        <!-- Integracion de jquery -->
+          <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+          <script type="text/javascript" src="Jquery/jquery-3.6.1.min.js"></script>
+          <script type="text/javascript" src="Jquery/selectore.js"></script>
+
+         <!--  <script>
+            $(document).ready(function(){
+              console.log('Jquery y La Web cargado...');
+            })
+          </script> -->
+
+          <style>
+            .zebra{
+              border: 5px dashed black;
+            }
+
+            .grande{
+              font-size: 30px;
+            }
+
+            .margen-superior{
+              display: block;
+              margin-top: 25px;
+            }
+
+            .resaltado{
+              border-bottom: 2px solid brown;
+            }
+          </style>
+</head>
+<body>
+
+  <h1>Aprendiendo JQuery con Victor</h1>
+    <ul>
+      <li><a href="https://google.com" title="google">Ir a Google</a></li>
+      <li><a href="https://facebook.com" title="facebook">Ir a Facebook</a></li>
+    </ul>
+
+  <p>Ejercicios de jquery</p>
+  <p id="rojo" class="borde">Practica uno</p>
+  <p id="amarillo" class="zebra">Practica con selectores</p>
+  <p id="verde" class="borde">Quiero ser un parrafo verde</p>
+
+  <p class="zebra">Quiero ser un parrafo blanco</p>
+
+  <div id="caja">
+    <p>Hola soy una caja</p>
+    <ul>
+      <li>Elemento 1</li>
+      <li id="elemento2">Elemento 2</li>
+    </ul>
+    <span class="resaltado">Soy un spand</span>
+  </div>
+  
+</body>
+</html>
